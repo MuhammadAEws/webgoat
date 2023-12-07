@@ -1,0 +1,37 @@
+Name: Workflow_5485
+SchemaVersion: "1.0"
+
+# Optional - Set automatic triggers.
+Triggers:
+  - Type: PUSH
+    Branches:
+      - main
+Actions:
+  MendSCA_fa:
+    # Identifies the action. Do not modify this value.
+    Identifier: mend/mendsca@v1.0.9
+    Outputs:
+      # Manual reports configuration
+      Reports:
+        # Optional
+        MendSCA:
+          Format: SARIFSCA
+          IncludePaths:
+            - report.sarif
+    # Specifies the source and/or artifacts to pass to the action as input.
+    Inputs:
+      # Optional
+      Sources:
+        - WorkflowSource # This specifies that the action requires this Workflow as a source
+      Variables:
+        - Name: WS_MAVEN_AGGREGATEMODULES
+          Value: "true"
+        - Name: WS_MAVEN_RUNPRESTEP
+          Value: "true"
+    Compute:
+      Type: EC2
+    # Defines the action's properties.
+    Configuration:
+      MendLicenseKey: AU~^MNqe|NHVQ9[Y[RHi~kX]yR4VxIIY{EZW5U~e~R\Y6ZIWM^X[}FpY4FpP9s4Ym^rXx|IfOlZ[~Mpfe^rX]tpeOlJ^69I[eFHfLJ6QGFn[9p~ZelKg]Nq^W9q]{pnVet[S[JqeOp6Xth7Zll[Q\NZi9gI^st4Qe|qYyNKgORIXt5oeRNXYxtJeShoX9Z5ZRVXVYtZfwVZ[vVKVSZXXI9YRRt\[}4IZSp\Vu9IfsVo[{oYf^FXWItZiNt\[:J5VSlqYL9YiVVpX|gKVTZXZ\9If[VoX{IZfN^XWXZKf4x6]w9I[op6htpYfet\X5wqi^p\YxtJfKt\X5oIZSpq[I5IiVVpXxNIVSt\ZYpZf[hZ[9hKZ^p\UYtJirt[[}wKVS5q[:54QV5[[x|KZSFXUY=4ewV5XutJZRF~^ut5QNp6XtV~ZeN\SL^pfORn]th\eNV\S}oZhZ56]sVKWo5[S}QKfS56]|onQn|qY]J6fo9KX|]5ZQtrV\ppi9oLX64IWnFnYMJ[ezt[W~tI[[NXR\Npio9[W~p4Y^NXWx9IeKt[[7Z5Ze5qUY9oirt[[v9oeRVX[:5IRrVo[v^pQRlKeu9YR^t[Xw^J[etrV\ppiOp6XtpI[eFr[\JKQ5gp[v|6eoZrZ{Q6QORIX}oIVRZXXY=IiFtrX8=qeNFnV\J[e7p[W4pnQ^Z\ZxRKeolI^xpnQn|qXxR[Q9M~]wNJ[l=K^MJJe8hJ^~^5ZQJnW\pZhVhZ[4J~Z^=qZ]N[ezt[W:9I[lp6htp4hWtqYS9oQm^ZQvZ[Z9Qp[utI[o^rX[tJQwhY]~sYeTp[W\VqiOp\^yonWt9YQNt\ZNtYeTp6]LNKeOp\^
+      MendProduct: aws-code-catalyst
+      MendProject: webgoat

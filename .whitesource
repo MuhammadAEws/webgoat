@@ -25,7 +25,6 @@
     "minSeverityLevel": "LOW",
     "issueType": "DEPENDENCY"
   },
-
   "remediateSettings": {
     "workflowRules": {
       "enabled": true
@@ -37,7 +36,6 @@
            "addRepositoryCoordinate": false,
            "addDockerfilePath": false,
            "addMendIdentifier": false
-
        }
    }
 }

@@ -36,6 +36,7 @@
            "addRepositoryCoordinate": false,
            "addDockerfilePath": false,
            "addMendIdentifier": false
+
        }
    }
 }
